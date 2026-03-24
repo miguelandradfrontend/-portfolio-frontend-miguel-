@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miguel Angel Andrades- Frontend Developer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+    
+    header {
+      text-align: center;
+      color: white;
+      padding: 50px 0;
+
+      nav {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  color: #f9f9ff;
+  text-decoration: none;
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+nav a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+    }
+    
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    @media (max-width: 768px) {
+  h1 { font-size: 2em; }
+  main { 
+    margin: 10px; 
+    padding: 20px; 
+  }
+}
+section + section {
+  border-top: 1px solid #eee;
+  padding-top: 30px;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <header>
+  <h1>Miguel Angel Andrades</h1>
+<p>Frontend Developer</p>
+
+  <nav>
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+  </header>
+  
+<main>
+  <section id="sobre-mi">
+    <h2>👋 Sobre mí</h2>
+    <p>
+      Soy Miguel Angel, creativo digital y futuro Frontend Developer.
+      Especialista en diseño anime y e-commerce, ahora enfocándome en 
+      desarrollo web con React y JavaScript.
+    </p>
+  </section>
+
+  <section id="proyectos" style="margin-top: 40px;">
+    <h2>📁 Mis Proyectos</h2>
+    <article style="margin: 20px 0;">
+      <h3>Portfolio Personal</h3>
+      <p>Primera versión de mi portfolio como desarrollador frontend.</p>
+    </article>
+  </section>
+
+  <section id="contacto" style="margin-top: 40px;">
+    <h2>📬 Contacto</h2>
+    <p>Puedes escribirme a: <strong>kmotionchronicles@yahoo.com</strong></p>
+  </section>
+</main>
+</body>
+</html>
