@@ -106,5 +106,22 @@ section + section {
     <p>Puedes escribirme a: <strong>kmotionchronicles@yahoo.com</strong></p>
   </section>
 </main>
+<script>
+  // 1. CAMBIAR NOMBRE al hacer clic
+  document.querySelector('h1').addEventListener('click', function() {
+    this.textContent = '¡Hola desde JavaScript! 🚀';
+  });
+
+  // 2. DOBLE CLICK FONDO - SUPERSIMPLE
+  document.body.ondblclick = function() {
+    document.body.style.background = '#6a0dad';
+  };
+
+  // 3. CONTADOR VISITAS (localStorage)
+  let visitas = localStorage.getItem('visitas') || 0;
+  visitas++;
+  localStorage.setItem('visitas', visitas);
+  document.querySelector('#contacto p').innerHTML += `<br>🧑‍💻 Visitas: ${visitas}`;
+</script>
 </body>
 </html>
