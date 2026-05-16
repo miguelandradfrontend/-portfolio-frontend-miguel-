@@ -88,22 +88,30 @@ section + section {
 
 .card {
   background: #f8f9fa;
-  padding: 25px;
-  border-radius: 12px;
+  padding: 35px 30px;
+  border-radius: 18px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
   border: 1px solid #eee;
 }
-
+.card p {
+  line-height: 1.7;
+  margin-top: 15px;
+  color: #555;
+}
+.card h3 {
+  margin-bottom: 15px;
+  font-size: 1.3em;
+}
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px) scale(1.02);
   box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
 
 .tag {
   display: inline-block;
-  background: #667eea;
+  background: linear-gradient(135deg, #1e1f3a 0%, #3b1f5c 50%, #6b2fa3 100%);
   color: white;
   padding: 5px 12px;
   border-radius: 20px;
