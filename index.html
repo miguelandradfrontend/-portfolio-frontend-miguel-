@@ -447,7 +447,27 @@ setTimeout(function() {
   this.textContent = `Status ${currentStatus + 1} / ${learningStatuses.length}`;
 
 });
+const cards = document.querySelectorAll('.card');
 
+cards.forEach(function(card) {
+
+const randomRotation = Math.random() * 8 - 4;
+
+card.style.transform = `rotate(${randomRotation}deg)`;
+
+card.addEventListener('mouseenter', function() {
+
+  card.style.transform = 'rotate(0deg) scale(1.10)';
+
+});
+
+card.addEventListener('mouseleave', function() {
+
+  card.style.transform = `rotate(${randomRotation}deg)`;
+
+});
+
+});
 
 </script>
 </body>
