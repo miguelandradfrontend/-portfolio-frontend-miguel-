@@ -236,6 +236,32 @@ section + section {
   text-shadow: 0 0 10px rgba(140, 0, 255, 0.7);
 }
 
+#status-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  background:  linear-gradient(135deg, #6b2fa3, #1e1f3a);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#status-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(140, 0, 255, 0.5);
+}
+
+#learning-status {
+  margin-top: 25px;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+  color: #f3f3ff;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -246,6 +272,10 @@ section + section {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+#learning-status {
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
   </style>
 </head>
@@ -263,6 +293,10 @@ section + section {
   </nav>
 
   <button id="cyber-btn">✨ Cyber Mode</button>
+
+  <p id="learning-status">Currently learning: JavaScript DOM manipulation</p>
+
+<button id="status-btn">Change learning status</button>
 </header>
   
 <main>
@@ -381,6 +415,40 @@ document.querySelector('#cyber-btn').addEventListener('click', function() {
   }
 
 });
+
+const statusText = document.querySelector('#learning-status');
+
+const learningStatuses = [
+  'Currently learning: JavaScript DOM manipulation',
+  'Currently learning: Responsive Design',
+  'Currently learning: CSS animations',
+  'Currently learning: Git & GitHub workflow',
+  'Currently learning: Frontend UI/UX thinking'
+];
+
+let currentStatus = 0;
+
+document.querySelector('#status-btn').addEventListener('click', function() {
+
+  currentStatus++;
+
+  if (currentStatus >= learningStatuses.length) {
+    currentStatus = 0;
+  }
+
+  statusText.style.opacity = 0;
+  statusText.style.transform = 'translateY(8px)';
+
+setTimeout(function() {
+  statusText.textContent = learningStatuses[currentStatus];
+  statusText.style.opacity = 1;
+  statusText.style.transform = 'translateY(0)';
+}, 300);
+  this.textContent = `Status ${currentStatus + 1} / ${learningStatuses.length}`;
+
+});
+
+
 </script>
 </body>
 </html>
