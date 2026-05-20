@@ -44,7 +44,8 @@ const learningStatuses = [
   'Currently learning: Responsive Design',
   'Currently learning: CSS animations',
   'Currently learning: Git & GitHub workflow',
-  'Currently learning: Frontend UI/UX thinking'
+  'Currently learning: Frontend UI/UX thinking',
+  'Currently learning: AI-assisted frontend workflows'
 ];
 let currentStatus = 0;
 
@@ -75,20 +76,28 @@ statusBtn.addEventListener('click', function() {
 // ======================
 
 const cards = document.querySelectorAll('.card');
-
-cards.forEach(function(card, index) {
-  const randomRotation = Math.random() * 6 - 3;
-
+function getRandomRotation() {
+  return Math.random() * 6 - 3;
+}
+function showCard(card, rotation, index) {
   setTimeout(function() {
     card.style.opacity = 1;
-    card.style.transform = `rotate(${randomRotation}deg) translateY(0)`;
+    card.style.transform = `rotate(${rotation}deg) translateY(0)`;
   }, (index + 1) * 700);
-    card.addEventListener('mouseenter', function() {
+}
+function activateCardHover(card, rotation) {
+
+  card.addEventListener('mouseenter', function() {
     card.style.transform = 'rotate(0deg) scale(1.10)';
   });
-    card.addEventListener('mouseleave', function() {
-    card.style.transform = `rotate(${randomRotation}deg) translateY(0)`;
+  card.addEventListener('mouseleave', function() {
+    card.style.transform = `rotate(${rotation}deg) translateY(0)`;
   });
+}
+cards.forEach(function(card, index) {
+  const randomRotation = getRandomRotation();
+  showCard(card, randomRotation, index);
+  activateCardHover(card, randomRotation);
 });
 
 // ======================
@@ -120,19 +129,19 @@ function activateReadyGlow() {
     terminalBox.classList.add('ready');
   }, 10);
 }
+
 function typeWriter(line, message, onComplete) {
   let charIndex = 0;
-
   const typing = setInterval(function() {
     line.textContent += message[charIndex];
     charIndex++;
-
     if (charIndex >= message.length) {
       clearInterval(typing);
       onComplete();
     }
   }, 35);
 }
+
 terminalBtn.addEventListener('click', function() {
   this.disabled = true;
   this.textContent = 'Scanning...';
@@ -155,7 +164,6 @@ typeWriter(line, currentMessage, function() {
   if (currentMessage.includes('READY')) {
     activateReadyGlow();
   }
-
   messageIndex++;
   setTimeout(typeTerminalMessage, 400);
 });
