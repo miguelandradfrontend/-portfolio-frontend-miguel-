@@ -38,7 +38,7 @@ document.querySelector('#cyber-btn').addEventListener('click', function() {
 // ======================
 
 const statusText = document.querySelector('#learning-status');
-
+const statusBtn = document.querySelector('#status-btn');
 const learningStatuses = [
   'Currently learning: JavaScript DOM manipulation',
   'Currently learning: Responsive Design',
@@ -46,22 +46,27 @@ const learningStatuses = [
   'Currently learning: Git & GitHub workflow',
   'Currently learning: Frontend UI/UX thinking'
 ];
-
 let currentStatus = 0;
-document.querySelector('#status-btn').addEventListener('click', function() {
 
+function goToNextStatus() {
   currentStatus++;
   if (currentStatus >= learningStatuses.length) {
     currentStatus = 0;
   }
+}
+function updateLearningStatus() {
   statusText.style.opacity = 0;
   statusText.style.transform = 'translateY(8px)';
 
-setTimeout(function() {
-  statusText.textContent = learningStatuses[currentStatus];
-  statusText.style.opacity = 1;
-  statusText.style.transform = 'translateY(0)';
-}, 300);
+  setTimeout(function() {
+    statusText.textContent = learningStatuses[currentStatus];
+    statusText.style.opacity = 1;
+    statusText.style.transform = 'translateY(0)';
+  }, 300);
+}
+statusBtn.addEventListener('click', function() {
+    goToNextStatus();
+    updateLearningStatus();
   this.textContent = `Status ${currentStatus + 1} / ${learningStatuses.length}`;
 });
 
@@ -136,7 +141,7 @@ terminalBtn.addEventListener('click', function() {
   terminalBox.classList.remove('ready');
 
   let messageIndex = 0;
-  function typeMessage() {
+  function typeTerminalMessage() {
     if (messageIndex >= terminalMessages.length) {
         terminalBtn.disabled = false;
         terminalBtn.textContent = 'Run scan again';
@@ -152,10 +157,10 @@ typeWriter(line, currentMessage, function() {
   }
 
   messageIndex++;
-  setTimeout(typeMessage, 400);
+  setTimeout(typeTerminalMessage, 400);
 });
   }
-  typeMessage();
+  typeTerminalMessage();
 });
 
 
