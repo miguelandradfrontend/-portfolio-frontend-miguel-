@@ -1,6 +1,23 @@
 /* ===================================
    GLOBAL STYLES
 =================================== */
+:root {
+  --dark-blue: #16162e;
+  --dark-purple: #351658;
+  --primary-purple: #a587c4;
+
+  --text-dark: #333;
+  --text-light: #f5f5ff;
+
+  --card-background: #f8f9fa;
+
+  --main-gradient: linear-gradient(
+  135deg,
+  var(--dark-blue) 0%,
+  var(--dark-purple) 50%,
+  var(--primary-purple) 100%
+);
+}
 * {
       margin: 0;
       padding: 0;
@@ -9,7 +26,7 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #1e1f3a 0%, #3b1f5c 50%, #6b2fa3 100%);
+      background: var(--main-gradient);
       min-height: 100vh;
       padding: 20px;
       animation: fadeIn 2s ease;
@@ -34,7 +51,7 @@
         text-align: center;
         font-size: 2em;
         margin-bottom: 25px;
-        color: #333;
+        color: var(--text-dark);
     }
 
     @keyframes fadeIn {
@@ -152,7 +169,7 @@
         padding: 10px 20px;
         border: none;
         border-radius: 12px;
-        background:  linear-gradient(135deg, #6b2fa3, #1e1f3a);
+        background: var(--main-gradient);
         color: white;
         font-family: 'Poppins', sans-serif;
         font-size: 0.95em;
@@ -171,7 +188,7 @@
 =================================== */
 
     .skill-tag {
-        background: linear-gradient(135deg, #1e1f3a 0%, #3b1f5c 50%, #6b2fa3 100%);
+        background: var(--main-gradient);
         color: white;
         padding: 8px 16px;
         border-radius: 25px;
@@ -184,7 +201,7 @@
 =================================== */
 
     .card {
-        background: #f8f9fa;
+        background: var(--card-background);
         padding: 35px 30px;
         border-radius: 18px;
         box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -214,7 +231,7 @@
 
     .tag {
         display: inline-block;
-        background: linear-gradient(135deg, #1e1f3a 0%, #3b1f5c 50%, #6b2fa3 100%);
+        background: var(--main-gradient);
         color: white;
         padding: 5px 12px;
         border-radius: 20px;
@@ -302,7 +319,7 @@
   padding: 12px 24px;
   border: none;
   border-radius: 12px;
-  background: linear-gradient(135deg, #7c3aed, #4c1d95);
+  background: var(--main-gradient);
   color: white;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
@@ -343,7 +360,7 @@
   padding: 12px 24px;
   border: none;
   border-radius: 14px;
-  background: linear-gradient(135deg, #6b2fa3, #1e1f3a);
+  background: var(--main-gradient);
   color: white;
   font-family: 'Poppins', sans-serif;
   font-size: 1em;
